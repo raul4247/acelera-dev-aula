@@ -6,8 +6,10 @@ import br.com.aceleradev.domain.Professor;
 import br.com.aceleradev.domain.Usuario;
 import br.com.aceleradev.repositories.UsuarioRepository;
 
-public class MainSistema {
+import java.time.LocalDate;
+import java.time.Month;
 
+public class MainSistema {
     public static void main(String[] args) {
 
         UsuarioRepository usuarioRepository = new UsuarioRepository();
@@ -15,17 +17,17 @@ public class MainSistema {
         Aluno aluno = new Aluno(
                 "Gustavo ",
                 "gustavo123",
-                "123.456.789-23");
+                "123.456.789-23", LocalDate.of(2018,  Month.JANUARY, 1));
 
         Aluno aluno2 = new Aluno(
                 "Gustavo 2",
                 "gustavo13",
-                "123.456.789-23");
+                "123.456.789-23", LocalDate.of(2017,  Month.JANUARY, 1));
 
         Professor professor = new Professor(
                 "Jose",
                 "jose123",
-                "123.456.789-23");
+                "123.456.789-23", LocalDate.of(2016,  Month.JANUARY, 1));
 
         usuarioRepository.insere(aluno);
         usuarioRepository.insere(aluno2);
@@ -37,6 +39,7 @@ public class MainSistema {
         System.out.println("Alunos:");
         usuarioRepository.mostraAlunos();
 
+        System.out.println("Media idades : " + usuarioRepository.mediaIdadeAlunos());
 
 //        Disciplina disciplina = new Disciplina("Matematica", professor);
 //        disciplina.matricular(aluno);

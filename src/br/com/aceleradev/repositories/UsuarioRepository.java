@@ -4,6 +4,7 @@ import br.com.aceleradev.domain.Aluno;
 import br.com.aceleradev.domain.Professor;
 import br.com.aceleradev.domain.Usuario;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,17 @@ public class UsuarioRepository {
                 System.out.println(usuario);
             }
         });
+    }
+    public double mediaIdadeAlunos(){
+        double soma = 0.0;
+        int numAlunos = 0;
+        for(Usuario u: usuarios ){
+            if(u instanceof Aluno){
+                numAlunos++;
+                soma+=(LocalDate.now().getYear() - u.getDataNascimento().getYear());
+            }
+        };
+        return soma/(double)numAlunos;
     }
 
 }
