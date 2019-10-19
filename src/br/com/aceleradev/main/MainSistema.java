@@ -25,11 +25,21 @@ public class MainSistema {
         Professor professor = new Professor(
                 "Jose",
                 "jose123",
-                "123.456.789-23");
+                "123.456.789-23", "BIOLOGICAS");
+        Professor professor2 = new Professor(
+                "Jose",
+                "jose123",
+                "123.456.789-23", "BIOLOGICAS");
+        Professor professor3 = new Professor(
+                "Jose",
+                "jose123",
+                "123.456.789-23", "EXATAS");
 
         usuarioRepository.insere(aluno);
         usuarioRepository.insere(aluno2);
         usuarioRepository.insere(professor);
+        usuarioRepository.insere(professor2);
+        usuarioRepository.insere(professor3);
 
         System.out.println("Professores:");
         usuarioRepository.mostraProfessores();
@@ -37,7 +47,7 @@ public class MainSistema {
         System.out.println("Alunos:");
         usuarioRepository.mostraAlunos();
 
-
+        usuarioRepository.contaProfessoresDisciplina();
 //        Disciplina disciplina = new Disciplina("Matematica", professor);
 //        disciplina.matricular(aluno);
 
