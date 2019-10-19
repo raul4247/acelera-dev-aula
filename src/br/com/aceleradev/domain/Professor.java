@@ -1,5 +1,8 @@
 package br.com.aceleradev.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import java.time.LocalDate;
 
 public class Professor extends Usuario {
