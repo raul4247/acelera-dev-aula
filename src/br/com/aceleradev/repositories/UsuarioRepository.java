@@ -45,4 +45,20 @@ public class UsuarioRepository {
         return soma/(double)numAlunos;
     }
 
+    public void contaProfessoresDisciplina(){
+        int bio = 0, exa = 0, hum = 0;
+        for(Usuario u: usuarios){
+            if(u instanceof Professor){
+                if(((Professor) u).getDisciplina().equals("BIOLOGICAS"))
+                    bio++;
+                else if(((Professor) u).getDisciplina().equals("EXATAS"))
+                    exa++;
+                else if(((Professor) u).getDisciplina().equals("HUMANAS"))
+                    hum++;
+            }
+        }
+        System.out.println("Professores de bio: " + bio);
+        System.out.println("Professores de exatas: " + exa);
+        System.out.println("Professores de humanas: " + hum);
+    }
 }

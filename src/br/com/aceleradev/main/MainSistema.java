@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.Month;
 
 public class MainSistema {
+
     public static void main(String[] args) {
 
         UsuarioRepository usuarioRepository = new UsuarioRepository();
@@ -27,11 +28,23 @@ public class MainSistema {
         Professor professor = new Professor(
                 "Jose",
                 "jose123",
-                "123.456.789-23", LocalDate.of(2016,  Month.JANUARY, 1));
+                "123.456.789-23", LocalDate.of(2016,  Month.JANUARY, 1), "BIOLOGICAS");
+
+        Professor professor2 = new Professor(
+                "Jose",
+                "jose123",
+                "123.456.789-23",LocalDate.of(2016,  Month.JANUARY, 1), "BIOLOGICAS");
+        Professor professor3 = new Professor(
+                "Jose",
+                "jose123",
+                "123.456.789-23", LocalDate.of(2016,  Month.JANUARY, 1),"EXATAS");
+
 
         usuarioRepository.insere(aluno);
         usuarioRepository.insere(aluno2);
         usuarioRepository.insere(professor);
+        usuarioRepository.insere(professor2);
+        usuarioRepository.insere(professor3);
 
         System.out.println("Professores:");
         usuarioRepository.mostraProfessores();
@@ -41,6 +54,7 @@ public class MainSistema {
 
         System.out.println("Media idades : " + usuarioRepository.mediaIdadeAlunos());
 
+        usuarioRepository.contaProfessoresDisciplina();
 //        Disciplina disciplina = new Disciplina("Matematica", professor);
 //        disciplina.matricular(aluno);
 
