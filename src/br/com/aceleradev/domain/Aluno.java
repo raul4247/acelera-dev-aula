@@ -1,5 +1,8 @@
 package br.com.aceleradev.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Aluno extends Usuario{
 
     private Integer numeroMatricula;
