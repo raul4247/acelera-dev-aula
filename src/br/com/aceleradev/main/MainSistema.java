@@ -31,16 +31,20 @@ public class MainSistema {
         Professor professor = new Professor(
                 "Jose",
                 "jose123",
-                "123.456.789-23", LocalDate.of(2016,  Month.JANUARY, 1), "BIOLOGICAS");
+                "123.456.789-23", LocalDate.of(2018, Month.JANUARY, 1),
+                LocalDate.of(2018, Month.JANUARY, 1), "BIOLOGICAS");
 
         Professor professor2 = new Professor(
                 "Jose",
                 "jose123",
-                "123.456.789-23",LocalDate.of(2016,  Month.JANUARY, 1), "BIOLOGICAS");
+                "123.456.789-23", LocalDate.of(2018, Month.JANUARY, 1),
+                LocalDate.of(2018, Month.JANUARY, 1), "BIOLOGICAS");
+
         Professor professor3 = new Professor(
                 "Jose",
                 "jose123",
-                "123.456.789-23", LocalDate.of(2016,  Month.JANUARY, 1),"EXATAS");
+                "123.456.789-23", LocalDate.of(2018, Month.JANUARY, 1),
+                LocalDate.of(2018, Month.JANUARY, 1), "BIOLOGICAS");
 
         professor.adicionaDisciplina("EXATAS");
         professor.adicionaDisciplina("BIOLOGICAS");
@@ -59,6 +63,7 @@ public class MainSistema {
 
         System.out.println("Alunos do prof: " + usuarioRepository.contaAlunosPorProfessor(professor.getNome()));
         System.out.println("Media idades : " + usuarioRepository.mediaIdadeAlunos());
+        System.out.println("Media exp : " + usuarioRepository.mediaExpProfessores());
 
         usuarioRepository.contaProfessoresDisciplina();
 //        Disciplina disciplina = new Disciplina("Matematica", professor);

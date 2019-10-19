@@ -45,6 +45,18 @@ public class UsuarioRepository {
         return soma/(double)numAlunos;
     }
 
+    public double mediaExpProfessores() {
+        double soma = 0.0;
+        int numProfs = 0;
+        for (Usuario u : usuarios) {
+            if (u instanceof Professor) {
+                numProfs++;
+                soma += (LocalDate.now().getYear() - ((Professor) u).getAnoInicioCarreira().getYear());
+            }
+        }
+        ;
+        return soma / (double) numProfs;
+    }
     public void contaProfessoresDisciplina(){
         int bio = 0, exa = 0, hum = 0;
         for(Usuario u: usuarios){
